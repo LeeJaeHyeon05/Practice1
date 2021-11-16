@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">fastcampus2</string>
+    <string name="changeButtonText">시간 재설정</string>
+    <string name="on_alarm">알람 켜기</string>
 </resources>
