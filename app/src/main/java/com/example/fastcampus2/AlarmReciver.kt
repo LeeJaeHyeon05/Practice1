@@ -45,6 +45,7 @@ class AlarmReciver: BroadcastReceiver() {
             val build = NotificationCompat.Builder(context, NOTIFICATION_CHANNAL_ID)
                 .setContentTitle("알람")
                 .setContentText("일어날 시간입니다.")
+                    .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
 
             notify(NOTIFICATION_ID, build.build())

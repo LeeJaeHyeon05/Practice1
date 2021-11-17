@@ -56,20 +56,24 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+                val intent = Intent(this, AlarmReciver::class.java)
+                val pendingIntent = PendingIntent.getBroadcast(this, ALARM_REQUEST_CODE,
+                        intent, PendingIntent.FLAG_UPDATE_CURRENT)
+                alarmManager.setInexactRepeating(
+                        AlarmManager.RTC_WAKEUP,
+                        calendar.timeInMillis,
+                        AlarmManager.INTERVAL_DAY,
+                        pendingIntent
+                )
+
 
             } else {
                 cancelAlarm()
                 // 꺼진 경우 -> 알람 제거
 
             }
-            //데이터 확인
 
-            //온/오프에 따라 작업을 처리한다
 
-            //오프 -> 알람 제거
-            // 온 -> 알람 등록
-
-            //데이터를 저장한다
         }
     }
 
